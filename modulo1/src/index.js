@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { render } from 'react-dom';
 
 class Button extends Component {
@@ -19,6 +20,15 @@ class ButtonClear extends Component {
     }
 }
 
+ButtonClear.defaultProps = {
+    children: ' | Limpar'
+}
+
+ButtonClear.propTypes = {
+    Click: PropTypes.func.isRequired,
+    children: PropTypes.string
+}
+
 class App extends Component {
     
     btnClick(){
@@ -31,6 +41,7 @@ class App extends Component {
                 <Button />
                 <ButtonCancel title=" | Cancelar" />
                 <ButtonClear Click={ this.btnClick }> | Limpar formulário </ButtonClear>
+                <ButtonClear Click={ () => alert('Botão Limpar!') }/>
             </Fragment>
         );
     }
