@@ -15,18 +15,35 @@ class ButtonCancel extends Component {
 }
 
 class ButtonClear extends Component {
+
+    static defaultProps = {
+        children: ' | Limpar'
+    }
+    
+    static propTypes = {
+        Click: PropTypes.func.isRequired,
+        children: PropTypes.string
+    }
+
     render(){
         return <a href="#" onClick={ this.props.Click }>{ this.props.children }</a>;
     }
 }
 
-ButtonClear.defaultProps = {
-    children: ' | Limpar'
-}
+class ButtonSomar extends Component {
 
-ButtonClear.propTypes = {
-    Click: PropTypes.func.isRequired,
-    children: PropTypes.string
+    static defaultProps = {
+        children: 'Contador'
+    }
+
+    static propTypes = {
+        Click: PropTypes.func.isRequired,
+        children: PropTypes.string
+    }
+
+    render(){
+        return <button onClick={this.props.Click}>{ this.props.children }</button>
+    }
 }
 
 class App extends Component {
@@ -34,6 +51,15 @@ class App extends Component {
     btnClick(){
         alert('Botão Clicado!');
     }
+
+    state = {
+        counter: 0
+    }
+
+    btnSomar = () => {
+        this.setState({counter: this.state.counter + 1});
+    }
+
     render(){
         return (
             <Fragment>
@@ -42,6 +68,8 @@ class App extends Component {
                 <ButtonCancel title=" | Cancelar" />
                 <ButtonClear Click={ this.btnClick }> | Limpar formulário </ButtonClear>
                 <ButtonClear Click={ () => alert('Botão Limpar!') }/>
+                <ButtonSomar Click={this.btnSomar}> Somar </ ButtonSomar>
+                <h1>{ this.state.counter }</h1>
             </Fragment>
         );
     }
