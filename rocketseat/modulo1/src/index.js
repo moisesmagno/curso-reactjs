@@ -1,18 +1,18 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { render } from 'react-dom';
-import ButtonSomar from './ButtonSomar'
+import ButtonSomar from './ButtonSomar';
 
 import './style.scss';
 
 class Button extends Component {
-    render(){
-        return <a href="#">Enviar</a>;
-    }
+	render() {
+		return <a href="#">Enviar</a>;
+	}
 }
 
 class ButtonCancel extends Component {
-    render(){
+    render( ) {
         return <a href="#">{ this.props.title }</a>;
     }
 }
@@ -22,27 +22,26 @@ class ButtonClear extends Component {
     static defaultProps = {
         children: ' | Limpar'
     }
-    
+
     static propTypes = {
         Click: PropTypes.func.isRequired,
         children: PropTypes.string
     }
 
-    render(){
+    render() {
         return <a href="#" onClick={ this.props.Click }>{ this.props.children }</a>;
     }
 }
 
-
 class App extends Component {
-    
-    btnClick(){
-        alert('Botão Clicado!');
+
+	state = {
+        counter: 0,
     }
 
-    state = {
-        counter: 0
-    }
+	btnClick(){
+        alert('Botão Clicado!');
+	}
 
     btnSomar = () => {
         this.setState({counter: this.state.counter + 1});

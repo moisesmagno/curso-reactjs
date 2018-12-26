@@ -6,12 +6,12 @@ const ButtonSomar = props => (
 );
 
 ButtonSomar.defaultProps = {
-    children: 'Contador'
-}
+    children: 'Contador',
+};
 
 ButtonSomar.propTypes = {
-    Click: PropTypes.func.isRequired,
-    children: PropTypes.string
-}
+  Click: PropTypes.func.isRequired,
+  children: PropTypes.string,
+};
 
 export default ButtonSomar;
