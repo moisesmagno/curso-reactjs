@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { render } from 'react-dom';
 import ButtonSomar from './ButtonSomar'
 
+import './style.scss';
+
 class Button extends Component {
     render(){
         return <a href="#">Enviar</a>;
