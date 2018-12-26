@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { render } from 'react-dom';
+import ButtonSomar from './ButtonSomar'
 
 class Button extends Component {
     render(){
@@ -30,21 +31,6 @@ class ButtonClear extends Component {
     }
 }
 
-class ButtonSomar extends Component {
-
-    static defaultProps = {
-        children: 'Contador'
-    }
-
-    static propTypes = {
-        Click: PropTypes.func.isRequired,
-        children: PropTypes.string
-    }
-
-    render(){
-        return <button onClick={this.props.Click}>{ this.props.children }</button>
-    }
-}
 
 class App extends Component {
     
