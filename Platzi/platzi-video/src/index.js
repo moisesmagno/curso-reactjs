@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import { render } from 'react-dom';
 
-import Media from './playlist/components/media.js';
+import Playlist from './playlist/components/playlist';
+import data from '../src/api.json';
 
 const app = document.querySelector('#app');
 
-render(<Media />, app);
+render(<Playlist data={data} />, app);
 
 
