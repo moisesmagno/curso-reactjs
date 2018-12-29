@@ -21,7 +21,18 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [{loader: 'style-loader'},{loader: 'css-loader'},{loader: 'sass-loader'}]
-			      }
+            },
+            {
+              test: /\.(jpg|png|gif|svg)$/,
+              use: {
+                loader: 'url-loader',
+                options: {
+                  limit: 10000,
+                  fallback: 'file-loader',
+                  name: 'public/images/[name].[hash].[ext]',
+                }
+              }
+            },
         ]
     }
 };

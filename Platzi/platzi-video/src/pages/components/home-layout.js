@@ -1,9 +1,9 @@
 import React from 'react';
+import './home-layout.scss';
 
 const HomeLayout = (props) => {
   return (
-    <section>
-      <h1>layout</h1>
+    <section className="HomeLayout">
       { props.children }
     </section>
   );
