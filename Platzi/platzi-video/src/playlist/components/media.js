@@ -10,13 +10,6 @@ class Media extends PureComponent {
     author: this.props.author,
   }
 
-  handleClick = (event) => {
-    // Mudar o estado de um atributo
-    this.setState({
-      author: 'Moisés Salvador Escurra Aguilar'
-    });
-  }
-
   static propTypes = {
     cover: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -26,7 +19,7 @@ class Media extends PureComponent {
 
 	render(){
 		return (
-      <div className="Media" onClick={this.handleClick}>
+      <div className="Media" onClick={this.props.handleClick}>
         <div className="Media-cover">
           <img src={this.state.cover} alt="" width={260} height={160} className="Media-image"/>
           <h3 className="Media-title">{ this.state.title }</h3>

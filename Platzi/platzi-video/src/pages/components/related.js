@@ -4,7 +4,7 @@ import './related.scss';
 
 const Related = (props) => {
   return (
-    <div classNme="Related">
+    <div className="Related">
       <img src={logo} width={250}/>
     </div>
   )
