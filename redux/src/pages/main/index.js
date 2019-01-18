@@ -12,7 +12,7 @@ class Main extends Component {
   };
 
   static propTypes = {
-    addFavorite: PropTypes.func.isRequired,
+    addFavoriteRequest: PropTypes.func.isRequired,
     favorites: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number,
       name: PropTypes.string,
@@ -26,7 +26,7 @@ class Main extends Component {
     event.preventDefault();
 
     //Agora temos cessao ao addFavorite do acetion/favorite
-    this.props.addFavorite();
+    this.props.addFavoriteRequest(this.state.repositoryInput);
   };
 
   render(){
