@@ -13,8 +13,8 @@ class Main extends Component {
 
   handleAddRepository = (event) => {
     event.preventDefault();
-    console.log('teste')
-    //this.props.addFavoriteRequest(this.state.repositoryInput);
+
+    this.props.addFavoriteRequest(this.state.repositoryInput);
 
     this.setState({ repositoryInput: "" });
   }
