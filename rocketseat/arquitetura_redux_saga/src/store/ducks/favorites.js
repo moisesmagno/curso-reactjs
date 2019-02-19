@@ -40,9 +40,9 @@ export default function favorites(state = INITIAL_STATE, action){
     case Types.ADD_REQUEST:
       return { state };
     case Types.ADD_SUCCESS:
-      return { state };
+      return { ...state, error: null, data: [...state, action.payload.data] };
     case Types.ADD_FAILURE:
-      return { state }
+      return { ...state, error: action.payload.error }
     default:
       return state;
   }

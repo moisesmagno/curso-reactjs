@@ -30,12 +30,12 @@ class Main extends Component {
       </form>
 
       <ul>
-        <li>
-          <p>
-            <strong>Facebook React </strong> (Descrição do Repositório)
-          </p>
-          <a href="htts://facebook.com">Acessar repositório</a>
-        </li>
+        {this.props.favorites.data.map(favorite => <li key={favorite.id}>
+            <p>
+              <strong>{favorite.name}</strong> ({favorite.description})
+              <a href={favorite.url}>Acessar</a>
+            </p>
+        </li>)}
       </ul>
     </Fragment>
   }
