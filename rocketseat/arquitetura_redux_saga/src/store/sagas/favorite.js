@@ -19,6 +19,7 @@ export function* addFavorite(action) {
         description: data.description,
         url: data.html_url
       }
+      console.log(repositoryData);
       yield put(FavoriteActions.addFavoriteSuccess(repositoryData));
     }
   } catch (error) {

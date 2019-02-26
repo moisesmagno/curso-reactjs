@@ -30,12 +30,12 @@ class Main extends Component {
       </form>
 
       <ul>
-        {this.props.favorites.data.map(favorite => <li key={favorite.id}>
-            <p>
-              <strong>{favorite.name}</strong> ({favorite.description})
+      {this.props.favorites.data.map(favorite => <li key={favorite.id}>
+              <p>
+                <strong>{favorite.name}</strong> ({favorite.description})
+              </p>
               <a href={favorite.url}>Acessar</a>
-            </p>
-        </li>)}
+            </li>)}
       </ul>
     </Fragment>
   }
