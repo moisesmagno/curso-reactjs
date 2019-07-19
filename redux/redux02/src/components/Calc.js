@@ -9,7 +9,7 @@ const Calc = props => {
       <input type="text" placeholder="Valor 2" />
       <br />
       <br />
-      <button>Calcular</button>
+      <button>Calcular</button> <span>Total: 10</span>
     </div>
   );
 };
