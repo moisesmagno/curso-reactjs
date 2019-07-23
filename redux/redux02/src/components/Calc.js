@@ -11,11 +11,13 @@ const Calc = props => {
     total: 0
   });
 
-  const somarValores = e => {
+  const somarValores = async e => {
     e.preventDefault();
-    console.log(value);
 
-    setValue({ ...value, total: value.valor1 + value.valor2 });
+    let totalsoma = value.valor1 + value.valor2;
+
+    await setValue({ ...value, total: totalsoma });
+
     props.add_history(
       `${value.valor1} + ${value.valor2} = ${value.valor1 + value.valor2}`
     );
